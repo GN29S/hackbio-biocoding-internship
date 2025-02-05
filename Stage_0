@@ -28,11 +28,11 @@ Team_glycine = [
     "Prog_Language": "Python"
 },
 {
-    "Name": "Osiyemi Emmanuel"
-    "Slack_name": "Emmanuel"
-    "Email": "eseyi79@gmail.com"
-    "Hobby": "mentoring"
-    "Discipline": "Microbiology"
+    "Name": "Osiyemi Emmanuel",
+    "Slack_name": "Emmanuel",
+    "Email": "eseyi79@gmail.com",
+    "Hobby": "mentoring",
+    "Discipline": "Microbiology",
     "Prog_language": "python"
 }
 ]
