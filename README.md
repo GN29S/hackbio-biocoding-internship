@@ -1,4 +1,4 @@
-## hackbio-biocoding-internship##
-#Stage_0#
+## hackbio-biocoding-internship
+Stage_0
 
 
