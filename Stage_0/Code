@@ -16,7 +16,7 @@ Team_glycine = [
     "Hobby": "Reading",
     "Country": "Germany",
     "Discipline": "pharma",
-    "Prog_Language": "Python"
+    "Prog_language": "Python"
 },
 {
     "Name": "Adekunle Oluwafikayomi Blessing",
@@ -25,7 +25,7 @@ Team_glycine = [
     "Hobby": "Reading",
     "Country": "Nigeria",
     "Discipline": "Biochemistry",
-    "Prog_Language": "Python"
+    "Prog_language": "Python"
 },
 {
     "Name": "Osiyemi Emmanuel",
