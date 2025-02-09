@@ -69,4 +69,4 @@ print(f"Discipline: {Team_glycine[3]['Discipline']}")
 print(f"Prog_language: {Team_glycine[3]['Prog_language']}")
 
 # Team Members Github: https://github.com/GN29S; https://github.com/f1y1n?tab=repositories; https://github.com/eseyi79; https://github.com/Bashibawa/-hackbio-biocoding-internship; https://github.com/SheriffdeenHub
-#LinkedIn: 
+#Post on X: https://x.com/DataBioGr
