@@ -67,3 +67,5 @@ print(f"Hobby: {Team_glycine[3]['Hobby']}")
 print(f"Country: {Team_glycine[3]['Country']}")
 print(f"Discipline: {Team_glycine[3]['Discipline']}")
 print(f"Prog_language: {Team_glycine[3]['Prog_language']}")
+
+#LinkedIn: 
