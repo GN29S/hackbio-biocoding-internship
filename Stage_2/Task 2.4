@@ -1,1 +1,70 @@
 
+import pandas as pd
+import requests
+from io import StringIO
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# download the data and fix the table
+sift_url = "https://raw.githubusercontent.com/HackBio-Internship/public_datasets/main/R/datasets/sift.tsv"
+response = requests.get(sift_url)
+raw_data = response.text
+sift_df = pd.read_csv(StringIO(raw_data), delimiter=r"\s+", engine="python")
+
+foldx_url = "https://raw.githubusercontent.com/HackBio-Internship/public_datasets/main/R/datasets/foldX.tsv"
+response = requests.get(foldx_url)
+raw_data = response.text
+foldx_df = pd.read_csv(StringIO(raw_data), delimiter=r"\s+", engine="python")
+
+
+sift_df["specific_Protein_aa"] = sift_df["Protein"] + "_" + sift_df["Amino_Acid"]
+foldx_df["specific_Protein_aa"] = foldx_df["Protein"] + "_" + foldx_df["Amino_Acid"]
+
+foldx_dataframe_clean = foldx_df.drop(columns=['Protein', 'Amino_Acid'])
+final_dataframe = pd.merge(sift_df, foldx_dataframe_clean, on='specific_Protein_aa')
+
+deleterious_mutations = final_dataframe[(final_dataframe['sift_Score'] < 0.05) & (final_dataframe['foldX_Score'] > 2)]
+
+final_dataframe['Mutated_AA'] = final_dataframe['Amino_Acid'].str[0]
+
+frequency_table = final_dataframe['Amino_Acid'].str[0].value_counts().reset_index()
+
+frequency_table.columns = ['Original_Amino_Acid', 'Frequency']
+
+frequency_table = frequency_table.sort_values(by='Frequency', ascending=False)
+
+plt.figure(figsize=(10, 6))
+sns.barplot(
+    data=frequency_table,
+    x='Original_Amino_Acid',  
+    y='Frequency',
+    palette='viridis'
+)
+plt.title('Frequency of Original Amino Acids')
+plt.xlabel('Amino Acid')
+plt.ylabel('Count')
+plt.xticks(rotation=45)
+plt.show()
+
+
+plt.figure(figsize=(8, 8))
+
+wedges, texts, autotexts = plt.pie(
+    frequency_table['Frequency'],
+    labels=frequency_table['Original_Amino_Acid'],
+    autopct='%.1f%%', 
+    startangle=90,      
+    colors=sns.color_palette('tab20b'),  
+    wedgeprops={'edgecolor': None},
+    pctdistance=0.92,  
+    textprops={'fontsize': 10}
+)
+
+
+for autotext in autotexts:
+    autotext.set_color('white')
+    autotext.set_weight('bold')
+
+plt.title('Proportion of Original Amino Acids', fontsize=14)
+plt.tight_layout()
+plt.show()
