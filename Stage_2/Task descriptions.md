@@ -1,4 +1,4 @@
-#Task Code 2.4:
+# Task Code 2.4:
 Biochemistry & Oncology
 Proteins structures are known to be strongly connected to their functions. However, at the amino acid level, not all amino acids contribute to structure and function equally. Galardini and colleagues decided to investigate the impact of all possible individual, non synonymous nonsense mutations on the structure and function of protein.
 The functional impact was computed as SIFT scores and the structural impact was calculated as FoldX Score (in kCal/mol).
@@ -30,7 +30,7 @@ Determine the upregulated genes (Genes with Log2FC > 1 and pvalue < 0.01)
 Determine the downregulated genes (Genes with Log2FC < -1 and pvalue < 0.01)
 What are the functions of the top 5 upregulated genes and top 5 downregulated genes. (Use genecards)
 
-#Task Code 2.7:
+# Task Code 2.7:
 Public Health
 NHANES is a program run by the CDC to assess the health and nutritional status of adults and children in the US. It combines survey questions and physical examinations, including medical and physiological measurements and laboratory tests, and examines a representative sample of about 5,000 people each year. The data is used to determine the prevalence of diseases and risk factors, establish national standards, and support epidemiology studies and health sciences research. This information helps to develop public health policy, design health programs and services, and expand the nation's health knowledge.
 Dataset here
