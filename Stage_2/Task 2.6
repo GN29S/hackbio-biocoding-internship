@@ -85,3 +85,31 @@ gene_df = pd.DataFrame(list(gene_info.items()), columns=["Gene", "Description"])
 
 # Display the DataFrame
 print(gene_df)
+
+# Dictionary to store gene names and their functions
+genes = {
+    "Upregulated Genes": {
+        "EMILIN2": "Enables extracellular matrix constituent conferring elasticity",
+        "POU3F4": "RNA polymerase II transcription regulatory region sequence-specific DNA binding",
+        "LOC285954": "Acts as a tumor suppressor in various cancers",
+        "VEPH1": "Enables protein binding to interact with TGF-beta receptor type-1 (TGFBR1)",
+        "DTHD1": "Enables protein binding"
+    },
+    "Downregulated Genes": {
+        "TBX5": "RNA polymerase II transcription regulatory region sequence-specific DNA binding",
+        "IFITM1": "Enables protein binding",
+        "LAMA2": "Enables signaling receptor binding",
+        "CAV2": "Enables protein binding",
+        "TNN": "Enables integrin binding"
+    }
+}
+
+# Function to display gene functions
+def display_gene_functions():
+    for category, gene_list in genes.items():
+        print(f"\n{category}:")
+        for gene, function in gene_list.items():
+            print(f"{gene}: {function}")
+
+# Run the function
+display_gene_functions()
